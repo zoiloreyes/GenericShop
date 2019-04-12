@@ -5,6 +5,9 @@ var Libro = new Schema({
     Titulo: {
         type: String 
     },
+    Cantidad: {
+        type: Number
+    },
     Genero:{
         type: String
     },
@@ -15,6 +18,9 @@ var Libro = new Schema({
         type: Number
     },
     ISBN:{
+        type: String
+    },
+    Portada: {
         type: String
     }
 }, {

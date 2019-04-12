@@ -6,7 +6,7 @@
             <router-link to="home">
               <img src="img/logo1.png" alt="" />
             </router-link>
-          <router-link to="home" class="navbar-brand">Ebook</router-link>
+          <router-link :to="{ name: 'home'}" class="navbar-brand">Ebook</router-link>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#btn-colapsar">
               <span class="sr-only">Navegacion</span>
               <span class="icon-bar"></span> <span class="icon-bar"></span>
@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="btn-colapsar">
                     <ul class="nav navbar-nav">
                         <li>
-                          <router-link to="home">Inicio</router-link>
+                          <router-link :to="{ name: 'home'}" class="navbar-brand">Inicio</router-link>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Libros <span class="caret"></span>

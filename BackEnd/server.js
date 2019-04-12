@@ -41,9 +41,11 @@ app.get('/', (req, res) => {
 const itemRoutes = require('./expressRoutes/itemRoutes');
 const UsuarioRoutes = require("./expressRoutes/UsuarioRoutes");
 const LibroRoutes = require("./expressRoutes/LibroRoutes");
+const CategoriaRoutes = require("./expressRoutes/CategoriasRoutes");
 app.use("/items", itemRoutes);
 app.use("/usuarios", UsuarioRoutes);
 app.use("/libros", LibroRoutes);
+app.use("/categorias", CategoriaRoutes)
 // listen for requests
 app.listen(4242, () => {
     console.log("Server is listening on port 4242");

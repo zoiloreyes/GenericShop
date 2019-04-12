@@ -51,7 +51,9 @@
     export default {
         data() {
             return {
-                usuario: {}
+                usuario: {
+                    Rol: "Cliente"
+                }
             }
         },
         methods: {
