@@ -41,7 +41,6 @@
                       </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" v-if="isLoggedIn">
-                      
                       <CurrentSession />
                     </ul>
                     <!-- Formulario de Busqueda -->
@@ -80,6 +79,16 @@ export default {
           isLoggedIn: false,
           item: {}
       }
+  },
+  mounted: function() {
+    setInterval(() => {
+      if(localStorage.getItem("usuario")){
+        this.isLoggedIn = true;
+        console.log(localStorage.getItem("usuario"));
+      }else{
+        this.isLoggedIn = false;
+      }
+    },1000);
   },
   methods: {
       addItem() {

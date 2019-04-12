@@ -2,7 +2,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3>Iniciase Sesión</h3>
+                <h3>Inicia Sesión</h3>
             </div>
             <div class="card-body">
                 <form v-on:submit.prevent="login">
@@ -38,7 +38,7 @@
                     if(response.data){
                         alert("Sesion Iniciada");
                         localStorage.setItem("usuario", JSON.stringify(response.data));
-                        this.$router.push({path: "home"});
+                        this.$router.push({name: "home"});
                     }else{
                         localStorage.removeItem("usuario");
                         alert("Datos Incorrectos Intente de nuevo");
