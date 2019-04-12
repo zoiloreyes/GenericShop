@@ -3,29 +3,25 @@ var Schema = mongoose.Schema;
 
 var Usuario = new Schema({ 
 Nombre: {
-
     type: String 
-
 },
-
+Apellido: {
+    type: String 
+},
 FechadeNacimiento: {
-    type: Date
+    type: String
 },
 
 Direccion: {
-
     type: String
 },
 
 Cedula: {
-
     type: String
 },
 
 Telefono: {
-
     type: Number
-    
 },
 
 Correo: 
@@ -34,9 +30,8 @@ Correo:
 },
 
 Contrasena: {
-
     type: String
-},
+}
 
 }, {
     collection: 'Usuarios'

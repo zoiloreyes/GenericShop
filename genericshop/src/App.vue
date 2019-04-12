@@ -3,8 +3,10 @@
      <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
           <div class="navbar-header">
-          <img src="img/logo1.png" alt="" />
-          <a href="index.html" class="navbar-brand">Ebook</a>
+            <router-link to="home">
+              <img src="img/logo1.png" alt="" />
+            </router-link>
+          <router-link to="home" class="navbar-brand">Ebook</router-link>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#btn-colapsar">
               <span class="sr-only">Navegacion</span>
               <span class="icon-bar"></span> <span class="icon-bar"></span>
@@ -13,7 +15,8 @@
         </div>
         <div class="collapse navbar-collapse" id="btn-colapsar">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li>
+                          <router-link to="home">Inicio</router-link>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Libros <span class="caret"></span>
@@ -29,13 +32,20 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
 
+                    <ul class="nav navbar-nav navbar-right">
+                      
+                      <CurrentSession/>
+                    </ul>
                     <!-- Formulario de Busqueda -->
                     <form action="" class="navbar-form navbar-right">
                         <div class="from-group">
                             <input type="text" class="form-control" placeholder="Buscar" />
                             <button type="submit" class="btn btn-default">Buscar</button>
                         </div>
+                        
                     </form>
+                    
+
                 </div>
        
         </div>
@@ -50,6 +60,28 @@
     <router-view/>
   </div>
 </template>
+<script>
+import CurrentSession from "./components/CurrentSession"
+export default {
+  components: {
+      CurrentSession
+  },
+  data() {
+      return {
+          item: {}
+      }
+  },
+  methods: {
+      addItem() {
+           let uri = Config.APIBase + '/items/add';
+            this.axios.post(uri, this.item).then((response) => {
+                console.log(response.data)
+            });
+        }
+    }
+
+}
+</script>
 
 <style lang="scss">
 #app {

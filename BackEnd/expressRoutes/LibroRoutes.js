@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var libroRoutes = express.Router();
-var Libro = require("../models/Libro");
+var Libro = require("../Models/Libro");
 
 
 libroRoutes.route('/add').post(function(req, res){
@@ -62,4 +62,4 @@ libroRoutes.route('/').get(function (req, res) {
   });
 
   
-  module.exports = itemRoutes;                                                                                                                      
+  module.exports = libroRoutes;                                                                                                                      

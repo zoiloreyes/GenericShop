@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var UsuarioRoutes = express.Router();
-var Usuario = require("../models/Usuario");
+var Usuario = require("../Models/Usuario");
 
 
 UsuarioRoutes.route('/add').post(function(req, res){
@@ -16,7 +16,7 @@ UsuarioRoutes.route('/add').post(function(req, res){
 });
 
 UsuarioRoutes.route('/').get(function (req, res) {
-    Item.find(function (err, usuario){
+  Usuario.find(function (err, usuarios){
       if(err){
         console.log(err);
       }
