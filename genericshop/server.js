@@ -19,9 +19,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/items", itemRoutes);
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8081;
 
-var server = app.listen(() =>{
+var server = app.listen(port,() =>{
     console.log("Listening on port " + port);
-});
+}); 
 
