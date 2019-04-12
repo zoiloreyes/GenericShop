@@ -5,7 +5,7 @@
       <h3><b>Nueva Opción</b> Puedes descargar los libros virutales</h3>
     </div>
     
-    <div class="CategoryContainer">
+    <!--<div class="CategoryContainer">
       <div class="Category">
         <font-awesome-icon icon="user-secret" />
         PraceHordu
@@ -18,7 +18,7 @@
         <font-awesome-icon icon="user-secret" />
         PraceHordu
       </div>
-    </div>
+    </div>-->
     
     <div class="MaxVendidoContainer">
       
