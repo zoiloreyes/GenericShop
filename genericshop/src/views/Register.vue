@@ -49,9 +49,6 @@
 <script>
     import Config from "../config";
     export default {
-        components: {
-            name: "Register"
-        },
         data() {
             return {
                 usuario: {}

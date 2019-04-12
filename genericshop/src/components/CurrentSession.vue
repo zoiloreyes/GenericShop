@@ -1,7 +1,7 @@
 <template>
-    <li class="SessionContainer">
-        <router-link to="register">Regístrate</router-link>
-    </li>
+        <li class="SessionContainer">
+            <router-link to="register">Regístrate</router-link>
+        </li>
 </template>
 
 <script>

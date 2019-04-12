@@ -31,6 +31,9 @@ Correo:
 
 Contrasena: {
     type: String
+},
+Rol: {
+    type: String
 }
 
 }, {

@@ -15,6 +15,16 @@ UsuarioRoutes.route('/add').post(function(req, res){
         })
 });
 
+UsuarioRoutes.route("/login").post(function(req, res){
+    Usuario.findOne({Correo: req.body.Correo, Contrasena: req.body.Contrasena},function(err, usuario){
+      if(err){
+        console.log(err);
+      }else{
+        res.json(usuario)
+      }
+    })
+});
+
 UsuarioRoutes.route('/').get(function (req, res) {
   Usuario.find(function (err, usuarios){
       if(err){
