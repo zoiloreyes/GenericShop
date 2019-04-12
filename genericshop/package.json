@@ -24,6 +24,7 @@
     "sass-loader": "^7.1.0",
     "vue": "^2.6.6",
     "vue-axios": "^2.1.4",
+    "vue-fragment": "^1.5.1",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {

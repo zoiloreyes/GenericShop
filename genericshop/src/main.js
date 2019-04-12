@@ -13,6 +13,7 @@ import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {  faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import { Plugin } from "vue-fragment";
 
 library.add(
   faUserSecret
@@ -20,6 +21,7 @@ library.add(
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+Vue.use(Plugin);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 

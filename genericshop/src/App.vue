@@ -32,9 +32,17 @@
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" v-if="!isLoggedIn">
+                      <li>
+                          <router-link to="register">Regístrate</router-link>
+                      </li>
+                      <li>
+                          <router-link to="login">Inicia Sesión</router-link>
+                      </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" v-if="isLoggedIn">
                       
-                      <CurrentSession/>
+                      <CurrentSession />
                     </ul>
                     <!-- Formulario de Busqueda -->
                     <form action="" class="navbar-form navbar-right">
@@ -62,12 +70,14 @@
 </template>
 <script>
 import CurrentSession from "./components/CurrentSession"
+import Config from "./config";
 export default {
   components: {
       CurrentSession
   },
   data() {
       return {
+          isLoggedIn: false,
           item: {}
       }
   },
