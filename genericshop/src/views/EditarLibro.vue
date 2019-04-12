@@ -53,7 +53,7 @@ export default {
     mounted: function() {
         console.log("EditarLibro");
         console.log(this.$route);
-        let uri = Config.APIBase + '/libros/details/' + this.$route.params.id;
+        let uri = Config.APIBase + '/libros/edit/' + this.$route.params.id;
             this.axios.get(uri).then((response) => {
                 this.libro = response.data;
             });

@@ -15,7 +15,7 @@ libroRoutes.route('/add').post(function(req, res){
         })
 });
 
-libroRoutes.route("/details").post(function(req, res){
+libroRoutes.route("/details/:id").post(function(req, res){
   Libro.findOne({_id: req.params.id},function(err, libro){
     if(err){
       console.log(err);
