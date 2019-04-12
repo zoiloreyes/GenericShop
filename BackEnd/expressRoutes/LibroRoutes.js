@@ -15,6 +15,16 @@ libroRoutes.route('/add').post(function(req, res){
         })
 });
 
+libroRoutes.route("/details").post(function(req, res){
+  Libro.findOne({_id: req.params.id},function(err, libro){
+    if(err){
+      console.log(err);
+    }else{
+      res.json(libro)
+    }
+  })
+});
+
 libroRoutes.route('/').get(function (req, res) {
   Libro.find(function (err, items){
       if(err){
@@ -40,8 +50,13 @@ libroRoutes.route('/').get(function (req, res) {
       if (!item)
         return next(new Error('Could not load Document'));
       else {
-        item.name = req.body.name;
-        item.price = req.body.price;
+        item.Titulo = req.body.Titulo;
+        item.Cantidad = req.body.Cantidad;
+        item.Genero = req.body.Genero;
+        item.Autor = req.body.Autor;
+        item.Precio = req.body.Precio;
+        item.ISBN = req.body.ISBN;
+        item.Portada = req.body.Portada;
   
         item.save().then(item => {
             res.json('Update complete');

@@ -28,8 +28,8 @@
           <h3><b>Título: </b> {{libro.Titulo}}</h3>
           <h5><b>ISBN: </b> {{libro.ISBN}}</h5>
           <div v-if="esAdministrador">
-            <button class="btn btn-info mt-2">Editar</button>
-            <button class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
+            <router-link :to="{ name: 'editarlibro', params: {id : libro._id}}" tag="button" class="btn btn-info">Editar</router-link>
+            <button v-on:click="borrar(libro._id)" class="btn btn-danger" style="margin-left: 10px">Eliminar</button>
           </div>
         </div>
 
@@ -49,6 +49,14 @@ export default {
       categorias: [],
       librosMasVendidos: [],
       esAdministrador: false
+    }
+  },
+  methods: {
+    borrar(id){
+      let uri = Config.APIBase + '/libros/delete/' + id;
+      this.axios.get(uri).then((response) => {
+        location.reload();
+    });
     }
   },
   mounted: function() {
