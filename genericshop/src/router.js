@@ -5,6 +5,7 @@ import Register from "./views/Register.vue";
 import Login from "./views/Login.vue";
 import CrearLibro from "./views/CrearLibro";
 import EditarLibro from "./views/EditarLibro";
+import Contacto from "./views/Contacto";
 Vue.use(Router)
 
 export default new Router({
@@ -40,6 +41,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
-    }
+    },
+    { 
+      path: "/contacto",
+      name: "contacto",
+      component: Contacto
+     }
   ]
 })
