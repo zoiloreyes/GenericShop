@@ -1,13 +1,12 @@
 var express = require("express");
 var app = express();
-var itemRoutes = express.Router();
+var libroRoutes = express.Router();
+var Libro = require("../models/Libro");
 
-var Item = require("../models/Item");
 
-
-itemRoutes.route('/add').post(function(req, res){
-    var item = new Item(req.body);
-          item.save()
+libroRoutes.route('/add').post(function(req, res){
+  var libro = new Libro(req.body);
+        libro.save()
         .then(item => {
             res.status(200).json({'item': "Item Añadido correctamente"});
 
@@ -16,8 +15,8 @@ itemRoutes.route('/add').post(function(req, res){
         })
 });
 
-itemRoutes.route('/').get(function (req, res) {
-    Item.find(function (err, items){
+libroRoutes.route('/').get(function (req, res) {
+  Libro.find(function (err, items){
       if(err){
         console.log(err);
       }
@@ -28,16 +27,16 @@ itemRoutes.route('/').get(function (req, res) {
   });
   
   // Defined edit route
-  itemRoutes.route('/edit/:id').get(function (req, res) {
+  libroRoutes.route('/edit/:id').get(function (req, res) {
     var id = req.params.id;
-    Item.findById(id, function (err, item){
+    Libro.findById(id, function (err, item){
         res.json(item);
     });
   });
   
   //  Defined update route
-  itemRoutes.route('/update/:id').post(function (req, res) {
-    Item.findById(req.params.id, function(err, item) {
+  libroRoutes.route('/update/:id').post(function (req, res) {
+    Libro.findById(req.params.id, function(err, item) {
       if (!item)
         return next(new Error('Could not load Document'));
       else {
@@ -55,12 +54,12 @@ itemRoutes.route('/').get(function (req, res) {
   });
   
   // Defined delete | remove | destroy route
-  itemRoutes.route('/delete/:id').get(function (req, res) {
-    Item.findByIdAndRemove({_id: req.params.id}, function(err, item){
+  libroRoutes.route('/delete/:id').get(function (req, res) {
+    Libro.findByIdAndRemove({_id: req.params.id}, function(err, item){
           if(err) res.json(err);
           else res.json('Successfully removed');
       });
   });
 
   
-  module.exports = itemRoutes;
+  module.exports = itemRoutes;                                                                                                                      
