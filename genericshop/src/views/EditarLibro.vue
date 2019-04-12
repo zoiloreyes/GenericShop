@@ -35,7 +35,7 @@
                         <input type="text" class="form-control" v-model="libro.Portada"/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Registrar Libro"/>
+                        <input type="submit" class="btn btn-primary" value="Actualizar Libro"/>
                     </div>
                 </form>
             </div>
@@ -63,6 +63,7 @@ export default {
             let uri = Config.APIBase + '/libros/update/' + this.$route.params.id;
             this.axios.post(uri, this.libro).then((response) => {
                     console.log(response.data);
+                    this.$router.push({name: "home"});
             });
         }
     }

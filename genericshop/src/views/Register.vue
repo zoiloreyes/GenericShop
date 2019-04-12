@@ -61,6 +61,7 @@
                 let uri = Config.APIBase + '/usuarios/add';
                 this.axios.post(uri, this.usuario).then((response) => {
                     console.log(response.data);
+                    this.$router.push({name: "login"});
                 });
             }
         }

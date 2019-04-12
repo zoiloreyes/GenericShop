@@ -55,6 +55,7 @@ export default {
             let uri = Config.APIBase + '/libros/add';
             this.axios.post(uri, this.libro).then((response) => {
                     console.log(response.data);
+                    this.$router.push({name: "home"});
                 });
         }
     }
